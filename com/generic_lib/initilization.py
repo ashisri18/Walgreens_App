@@ -10,14 +10,6 @@ import sys
 import os
 
 class Initilization(unittest.TestCase, ExcelSheet):
-    # dir = os.path.dirname(__file__)
-    # read_excel_path = dir[:len(dir)-15]
-    # print(path)
-    # now = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-    # log_path = path+"Report\Logs\Test"+"-" + now + ".log"
-    # logging.basicConfig(level=logging.INFO,filename = log_path)
-
-
 
     excel_sheet = ExcelSheet()
     def setUp(self):
@@ -32,7 +24,7 @@ class Initilization(unittest.TestCase, ExcelSheet):
         desired_caps['appActivity'] = '.AppStart'
 
         self.driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
-        time.sleep(5)
+        self.driver.implicitly_wait(30)
 
         # global path
 
@@ -58,10 +50,6 @@ class Initilization(unittest.TestCase, ExcelSheet):
     def tearDown(self):
         logging.info("Inside TearDown Method.")
         self.driver.quit()
-
-    def test_tap_on_photo(self):
-        self.driver.find_element_by_id("btn_home_photo")
-        time.sleep(5)
 
     # def tearDownClass(cls):
     #     cls.excel_sheet.writeExcel()

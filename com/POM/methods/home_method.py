@@ -19,7 +19,8 @@ class HomePage(BasePage):
 
     def navigate_Shop_Products_Screen(self):
         element = self.driver.find_element(*HomeLoc.SHOP_BTN)
-        ActionChains(self.driver).move_to_element(element).perform()
+        element.click()
+        # ActionChains(self.driver).move_to_element(element).perform()
         time.sleep(2)
 
     def navigate_Photo_Screen(self):
@@ -42,3 +43,8 @@ class HomePage(BasePage):
     def navigate_Store_Locator_Screen(self):
         element = self.driver.find_element(*HomeLoc.STORE_LOCATOR_TXT)
         element.click()
+
+    def navigate_Settings_Screen(self):
+        element = self.driver.find_element(*HomeLoc.SETTINGS_ICN)
+        element.click()
+        time.sleep(2)

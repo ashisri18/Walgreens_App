@@ -10,17 +10,16 @@ class Script02_Sports(Initilization, ExcelSheet):
     testCaseId = "TestCase_02"
     test_status = None
 
-    def test_02_buy_jersey(self):
+    def test_02_capture_products_category(self):
         test_method_name = self._testMethodName
-        # initilization = Initilization()
         report = Report()
         try:
             home_page = HomePage(self.driver)
             sport = Sport(self.driver)
             logging.info('Now in Sport Script')
 
-            home_page.navigate_sports()
-            sport.buy_jerseys()
+            home_page.navigate_Rewards_Screen()
+            # sport.buy_jerseys()
             self.test_status = "Pass"
             logging.info(self.testCaseId + "=" + self.test_status)
             self.update_status_array(self.testCaseId, self.test_status)

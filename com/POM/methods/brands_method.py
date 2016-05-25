@@ -1,4 +1,4 @@
-from com.POM.locators.brand_loc import *
+from com.POM.locators.shop_products_loc import *
 class BasePage(object):
     def __init__(self,driver):
         self.driver = driver

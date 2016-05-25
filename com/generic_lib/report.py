@@ -4,32 +4,32 @@ from datetime import datetime
 
 class Report:
     dir = os.path.dirname(__file__)
-    path = dir[:len(dir) - 32]
+    path = dir[:len(dir) - 29]
     read_excel_path = path+"Walgreens_App\\"
     print(path)
     now = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 
     # def log_path(self):
-    log_path = path+"Framework_Reports\Logs\\"
+    log_path = path+"Walgreens_Reports\Logs\\"
     if not os.path.exists(log_path):
         os.makedirs(log_path)
     logging.basicConfig(level=logging.INFO, filename=log_path + "Test" + "-" + now + ".log")
         # return log_path
 
     def html_report_path(self):
-        html_report_path = self.path +"Framework_Reports\HTML_Reports\\"
+        html_report_path = self.path +"Walgreens_Reports\HTML_Reports\\"
         if not os.path.exists(html_report_path):
             os.makedirs(html_report_path)
         return html_report_path
 
     def screenshot_path(self):
-        screenshot_path = self.path+"Framework_Reports\Screenhots\\"
+        screenshot_path = self.path+"Walgreens_Reports\Screenhots\\"
         if not os.path.exists(screenshot_path):
             os.makedirs(screenshot_path)
         return screenshot_path
 
     def excel_report_path(self):
-        excel_report_path = self.path + "Framework_Reports\Excel_Reports\\"
+        excel_report_path = self.path + "Walgreens_Reports\Excel_Reports\\"
         if not os.path.exists(excel_report_path):
             os.makedirs(excel_report_path)
         return excel_report_path
